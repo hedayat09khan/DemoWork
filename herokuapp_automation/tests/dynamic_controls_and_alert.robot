@@ -1,23 +1,25 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource   ../resources/keywords.robot
-
-*** Variables ***
-${BASE_URL}    https://the-internet.herokuapp.com/
-${DYNAMIC_CONTROLS}    xpath=//a[text()='Dynamic Controls']
-${ENABLE_BUTTON}    xpath=//button[text()='Enable']
-${INPUT_FIELD}    xpath=//form[@id='input-example']//input
-${JS_ALERTS}    xpath=//a[text()='JavaScript Alerts']
-${TRIGGER_ALERT}    xpath=//button[text()='Click for JS Alert']
+Library    ../libraries/custom_alert_keywords.py
+Resource   ../resources/dynamic_controls_page.robot
+Resource   ../resources/javascript_alerts_page.robot
 
 *** Test Cases ***
 Dynamic Controls And JS Alert End-to-End
-    [Documentation]    Modular, robust test for enabling input, entering text, and handling JS alert.
-    Open Browser    ${BASE_URL}    Chrome
+    [Documentation]    POM: Enable input, enter text, handle JS alert.
+    Open Browser    https://the-internet.herokuapp.com/    Chrome
     Maximize Browser Window
 
-    Go To Dynamic Controls And Enable Input
-    Enter Text In Enabled Input    Hello Sheila
-    Handle JavaScript Alert
+    # Dynamic Controls Page
+    Open Dynamic Controls Page
+
+    Enable Input Field
+    # Assert input field is enabled (already in POM keyword)
+    Input Text In Field    Hello Sheila
+    # Assert text is entered (already in POM keyword)
+
+    # JavaScript Alerts Page
+    Open JS Alerts Page
+    Trigger And Accept Alert
 
     [Teardown]    Close Browser

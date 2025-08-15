@@ -1,8 +1,9 @@
 # HerokuApp Automation Project
 
-This project demonstrates modular, maintainable UI automation using Robot Framework, Python, and SeleniumLibrary. It validates dynamic controls and JavaScript alerts on https://the-internet.herokuapp.com/.
+This project was created by Hedayat Khan to demonstrate advanced, maintainable UI automation using Robot Framework, Python, and SeleniumLibrary. It follows the Page Object Model (POM) for modularity and scalability, and validates dynamic controls and JavaScript alerts on https://the-internet.herokuapp.com/.
 
 ## Features
+- **Page Object Model (POM):** Each page/feature is encapsulated in its own resource file for clean separation of concerns.
 - Modular project structure
 - SeleniumLibrary for browser automation
 - Custom keywords for reusability
@@ -14,7 +15,8 @@ herokuapp_automation/
 ├── tests/
 │   └── dynamic_controls_and_alert.robot
 ├── resources/
-│   └── keywords.robot
+│   ├── dynamic_controls_page.robot
+│   └── javascript_alerts_page.robot
 ├── libraries/
 ├── requirements.txt
 └── README.md
@@ -41,6 +43,7 @@ See `tests/dynamic_controls_and_alert.robot` for a modular, maintainable test th
 - Handles a JavaScript alert
 
 ## Automation Best Practices
+- Page Object Model for maintainability and scalability
 - No hardcoded local paths or OS-specific dependencies
 - No manual waits; all waits are dynamic or minimal
 - Modular keywords and variables for maintainability

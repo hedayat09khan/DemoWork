@@ -1,117 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.3 on win32)" generated="2025-08-15T16:58:12.128990" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.3 on win32)" generated="2025-08-15T19:18:56.584050" rpa="false" schemaversion="5">
 <suite id="s1" name="Tests" source="C:\Tools\ticket book\herokuapp_automation\tests">
 <suite id="s1-s1" name="Dynamic Controls And Alert" source="C:\Tools\ticket book\herokuapp_automation\tests\dynamic_controls_and_alert.robot">
-<test id="s1-s1-t1" name="Dynamic Controls And JS Alert End-to-End" line="14">
+<test id="s1-s1-t1" name="Dynamic Controls And JS Alert End-to-End" line="8">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-15T16:58:12.621293" level="INFO">Opening browser 'Chrome' to base url 'https://the-internet.herokuapp.com/'.</msg>
-<arg>${BASE_URL}</arg>
+<msg time="2025-08-15T19:18:57.146406" level="INFO">Opening browser 'Chrome' to base url 'https://the-internet.herokuapp.com/'.</msg>
+<arg>https://the-internet.herokuapp.com/</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-15T16:58:12.620997" elapsed="6.323211"/>
+<status status="PASS" start="2025-08-15T19:18:57.145567" elapsed="5.304990"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-08-15T16:58:18.945167" elapsed="0.056401"/>
+<status status="PASS" start="2025-08-15T19:19:02.452037" elapsed="0.058011"/>
 </kw>
-<kw name="Go To Dynamic Controls And Enable Input" owner="keywords">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-08-15T16:58:19.004182" level="INFO">Clicking element 'xpath=//a[text()='Dynamic Controls']'.</msg>
-<arg>${DYNAMIC_CONTROLS}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-15T16:58:19.003588" elapsed="0.903791"/>
+<kw name="Open Dynamic Controls Page" owner="dynamic_controls_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-08-15T19:19:02.513434" level="INFO">Opening url 'https://the-internet.herokuapp.com/dynamic_controls'</msg>
+<arg>${DYNAMIC_CONTROLS_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-08-15T19:19:02.513239" elapsed="0.666388"/>
 </kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${ENABLE_BUTTON}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-08-15T16:58:19.907734" elapsed="0.021298"/>
+<status status="PASS" start="2025-08-15T19:19:02.512642" elapsed="0.667620"/>
 </kw>
+<kw name="Enable Input Field" owner="dynamic_controls_page">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-15T16:58:19.929723" level="INFO">Clicking button 'xpath=//button[text()='Enable']'.</msg>
+<msg time="2025-08-15T19:19:03.182300" level="INFO">Clicking button 'xpath=//button[text()='Enable']'.</msg>
 <arg>${ENABLE_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-15T16:58:19.929376" elapsed="0.172440"/>
+<status status="PASS" start="2025-08-15T19:19:03.181924" elapsed="0.179971"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${INPUT_FIELD}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-08-15T16:58:20.102322" elapsed="3.201654"/>
+<status status="PASS" start="2025-08-15T19:19:03.362298" elapsed="3.036818"/>
 </kw>
-<status status="PASS" start="2025-08-15T16:58:19.002911" elapsed="4.301200"/>
+<status status="PASS" start="2025-08-15T19:19:03.181254" elapsed="3.217982"/>
 </kw>
-<kw name="Enter Text In Enabled Input" owner="keywords">
+<kw name="Input Text In Field" owner="dynamic_controls_page">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-15T16:58:23.305179" level="INFO">Typing text 'Hello Sheila' into text field 'xpath=//form[@id='input-example']//input'.</msg>
+<msg time="2025-08-15T19:19:06.400238" level="INFO">Typing text 'Hello Sheila' into text field 'xpath=//form[@id='input-example']//input'.</msg>
 <arg>${INPUT_FIELD}</arg>
 <arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-15T16:58:23.304980" elapsed="0.195134"/>
+<status status="PASS" start="2025-08-15T19:19:06.400040" elapsed="0.213513"/>
 </kw>
 <kw name="Element Attribute Value Should Be" owner="SeleniumLibrary">
-<msg time="2025-08-15T16:58:23.525911" level="INFO">Element 'xpath=//form[@id='input-example']//input' attribute 'value' contains value 'Hello Sheila'.</msg>
+<msg time="2025-08-15T19:19:06.636109" level="INFO">Element 'xpath=//form[@id='input-example']//input' attribute 'value' contains value 'Hello Sheila'.</msg>
 <arg>${INPUT_FIELD}</arg>
 <arg>value</arg>
 <arg>${text}</arg>
 <doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<status status="PASS" start="2025-08-15T16:58:23.501794" elapsed="0.024203"/>
+<status status="PASS" start="2025-08-15T19:19:06.613911" elapsed="0.022289"/>
 </kw>
 <arg>Hello Sheila</arg>
-<status status="PASS" start="2025-08-15T16:58:23.304619" elapsed="0.221477"/>
+<status status="PASS" start="2025-08-15T19:19:06.399659" elapsed="0.236646"/>
 </kw>
-<kw name="Handle JavaScript Alert" owner="keywords">
+<kw name="Open JS Alerts Page" owner="javascript_alerts_page">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-08-15T16:58:23.527039" level="INFO">Opening url 'https://the-internet.herokuapp.com/'</msg>
-<arg>${BASE_URL}</arg>
+<msg time="2025-08-15T19:19:06.639495" level="INFO">Opening url 'https://the-internet.herokuapp.com/javascript_alerts'</msg>
+<arg>${JS_ALERTS_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-08-15T16:58:23.526890" elapsed="0.458726"/>
+<status status="PASS" start="2025-08-15T19:19:06.638826" elapsed="0.372673"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-08-15T16:58:23.986352" level="INFO">Clicking element 'xpath=//a[text()='JavaScript Alerts']'.</msg>
-<arg>${JS_ALERTS}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-15T16:58:23.985870" elapsed="0.557925"/>
+<status status="PASS" start="2025-08-15T19:19:06.637543" elapsed="0.374272"/>
 </kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${TRIGGER_ALERT}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-08-15T16:58:24.544045" elapsed="0.024667"/>
-</kw>
+<kw name="Trigger And Accept Alert" owner="javascript_alerts_page">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-15T16:58:24.569898" level="INFO">Clicking button 'xpath=//button[text()='Click for JS Alert']'.</msg>
+<msg time="2025-08-15T19:19:07.013878" level="INFO">Clicking button 'xpath=//button[text()='Click for JS Alert']'.</msg>
 <arg>${TRIGGER_ALERT}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-15T16:58:24.569123" elapsed="0.167185"/>
+<status status="PASS" start="2025-08-15T19:19:07.013326" elapsed="0.151094"/>
+</kw>
+<kw name="Get Alert Text" owner="custom_alert_keywords">
+<msg time="2025-08-15T19:19:07.167631" level="INFO">${alert_text} = I am a JS Alert</msg>
+<var>${alert_text}</var>
+<status status="PASS" start="2025-08-15T19:19:07.164606" elapsed="0.003087"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${alert_text}</arg>
+<arg>I am a JS Alert</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-08-15T19:19:07.167905" elapsed="0.000403"/>
 </kw>
 <kw name="Handle Alert" owner="SeleniumLibrary">
-<msg time="2025-08-15T16:58:24.737168" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:10</msg>
+<msg time="2025-08-15T19:19:07.168918" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:10</msg>
 <arg>action=ACCEPT</arg>
 <arg>timeout=10s</arg>
 <doc>Handles the current alert and returns its message.</doc>
-<status status="PASS" start="2025-08-15T16:58:24.736593" elapsed="0.009253"/>
+<status status="PASS" start="2025-08-15T19:19:07.168577" elapsed="0.011117"/>
 </kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-08-15T16:58:24.995997" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-08-15T16:58:24.751152" elapsed="0.245015"/>
-</kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-08-15T16:58:25.008921" level="INFO">Page title is 'The Internet'.</msg>
-<arg>The Internet</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-08-15T16:58:24.999848" elapsed="0.009197"/>
-</kw>
-<status status="PASS" start="2025-08-15T16:58:23.526572" elapsed="1.482609"/>
+<status status="PASS" start="2025-08-15T19:19:07.012623" elapsed="0.167379"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-08-15T16:58:25.009870" elapsed="2.286121"/>
+<status status="PASS" start="2025-08-15T19:19:07.181710" elapsed="2.274205"/>
 </kw>
-<doc>Modular, robust test for enabling input, entering text, and handling JS alert.</doc>
-<status status="PASS" start="2025-08-15T16:58:12.619251" elapsed="14.678105"/>
+<doc>POM: Enable input, enter text, handle JS alert.</doc>
+<status status="PASS" start="2025-08-15T19:18:57.141872" elapsed="12.314933"/>
 </test>
-<status status="PASS" start="2025-08-15T16:58:12.177898" elapsed="15.121733"/>
+<status status="PASS" start="2025-08-15T19:18:56.634722" elapsed="12.825448"/>
 </suite>
-<status status="PASS" start="2025-08-15T16:58:12.134418" elapsed="15.166758"/>
+<status status="PASS" start="2025-08-15T19:18:56.586248" elapsed="12.880144"/>
 </suite>
 <statistics>
 <total>
